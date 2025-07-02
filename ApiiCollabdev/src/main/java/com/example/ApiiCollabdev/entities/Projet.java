@@ -17,7 +17,7 @@ public class Projet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String titre;
-    private  String description;
+    private String description;
     private Boolean estFini;
     private Date dateDebut;
     private Date dateFin;

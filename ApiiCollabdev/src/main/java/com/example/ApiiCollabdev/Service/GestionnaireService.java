@@ -30,5 +30,8 @@ public class GestionnaireService {
     //Supprimer un Gestionnaire
     public void supprimerGestionnaire(int gestionnaire){
         gestionnaireRepository.deleteById(gestionnaire);
+
+    public Optional<Gestionnaire> findByEmail(String email) {
+        return gestionnaireRepository.findByEmail(email);
     }
 }
