@@ -13,7 +13,6 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @MappedSuperclass
 
 public abstract class Utilisateur  {

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/contributeurs")
 public class ContributeurController {
     ContributeurService contributeurService;
     ContributionService contributionService;
