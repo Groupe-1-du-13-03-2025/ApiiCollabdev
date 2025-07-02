@@ -4,9 +4,10 @@ import com.example.ApiiCollabdev.entities.enums.Genre;
 import com.example.ApiiCollabdev.entities.enums.Niveau;
 import com.example.ApiiCollabdev.entities.enums.Role;
 import com.example.ApiiCollabdev.entities.enums.Type;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Builder;
+
+import java.util.List;
 
 @Entity
 public class Contributeur extends Utilisateur {
@@ -20,9 +21,18 @@ public class Contributeur extends Utilisateur {
     private Double pieces;
     @Column(nullable = false)
     private String uriCV;
+
+    @ManyToMany
+    @JoinTable(
+            name = "Contributeur",
+            joinColumns = @JoinColumn(name = "contributeur_id"),
+            inverseJoinColumns = @JoinColumn(name = "projet_id")
+    )
+    private List<Projet> listProjet;
+
     @Builder
     public Contributeur(
-            Long id, String prenom, String nom, String email, String motDePasse, Genre genre, Role role,
+            int id, String prenom, String nom, String email, String motDePasse, Genre genre, Role role,
             Niveau niveau, Type type, String specialite, Double pieces, String uriCV)
     {
         super(id, prenom, nom, email, motDePasse, genre, role);

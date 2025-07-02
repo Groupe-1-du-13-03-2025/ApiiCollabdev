@@ -1,16 +1,20 @@
 package com.example.ApiiCollabdev.Service;
 
 import com.example.ApiiCollabdev.Repository.ContributeurRepository;
+import com.example.ApiiCollabdev.Repository.ContributionRepository;
 import com.example.ApiiCollabdev.entities.Contributeur;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ContributeurService {
     //injection de dépendance
     ContributeurRepository contributeurRepository;
-    public ContributeurService(ContributeurRepository contributeurRepository)
+    ContributionRepository contributionRepository;
+    public ContributeurService(ContributeurRepository contributeurRepository, ContributionRepository contributionRepository)
     {
         this.contributeurRepository = contributeurRepository;
+        this.contributionRepository = contributionRepository;
     }
     //find un contributeur par son id
     public Contributeur afficherContributeur(Long id)
@@ -18,11 +22,16 @@ public class ContributeurService {
         Optional<Contributeur> contributeurOptional = contributeurRepository.findById(id);
         return contributeurOptional.orElse(null);
     }
+    //lister les contributeurs
+    public List<Contributeur> afficherTousLesContributeurs()
+    {
+        return contributeurRepository.findAll();
+    }
 
     //lister ses projets
-    public void afficherListProjet(Long id)
+    public void afficherListProjet(int idContributeur, int idProjet)
     {
-
+        this.contributionRepository.findBy
     }
 
     //lister ses contributions par projet
