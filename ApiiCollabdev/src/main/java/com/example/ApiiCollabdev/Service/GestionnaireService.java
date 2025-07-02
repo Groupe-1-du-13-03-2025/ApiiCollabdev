@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GestionnaireService {
@@ -28,8 +29,9 @@ public class GestionnaireService {
     }
 
     //Supprimer un Gestionnaire
-    public void supprimerGestionnaire(int gestionnaire){
+    public void supprimerGestionnaire(int gestionnaire) {
         gestionnaireRepository.deleteById(gestionnaire);
+    }
 
     public Optional<Gestionnaire> findByEmail(String email) {
         return gestionnaireRepository.findByEmail(email);

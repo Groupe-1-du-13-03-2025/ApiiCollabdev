@@ -1,10 +1,11 @@
 package com.example.ApiiCollabdev.entities;
 
 import com.example.ApiiCollabdev.Service.GestionnaireService;
-import com.example.ApiiCollabdev.Service.auth.AuthenticationStrategy;
 import com.example.ApiiCollabdev.entities.enums.Genre;
 import com.example.ApiiCollabdev.entities.enums.Role;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,9 +13,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
-import java.util.Optional;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 @Setter
@@ -27,6 +29,8 @@ public class Gestionnaire extends Utilisateur {
     private GestionnaireService gestionnaireService;
 
     private String uriCv;
+    @OneToMany(mappedBy = "gestionnaire", cascade = CascadeType.ALL)
+    private List<Projet> projets = new ArrayList<>();
 
     @Builder
     public Gestionnaire(int id, String prenom, String nom, String email, String motDePasse, Genre genre, Role role, String uriCv) {
@@ -44,9 +48,6 @@ public class Gestionnaire extends Utilisateur {
             return BCrypt.checkpw(password, gestionnaire.getMotDePasse());
         }
     }
-
-    @OneToMany(mappedBy = "gestionnaire", cascade = CascadeType.ALL)
-    private List<Projet> projets = new ArrayList<>();
 }
 
 
