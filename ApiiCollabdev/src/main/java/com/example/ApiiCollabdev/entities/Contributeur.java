@@ -24,7 +24,7 @@ public class Contributeur extends Utilisateur {
 
     @ManyToMany
     @JoinTable(
-            name = "Contributeur",
+            name = "Contribution",
             joinColumns = @JoinColumn(name = "contributeur_id"),
             inverseJoinColumns = @JoinColumn(name = "projet_id")
     )
