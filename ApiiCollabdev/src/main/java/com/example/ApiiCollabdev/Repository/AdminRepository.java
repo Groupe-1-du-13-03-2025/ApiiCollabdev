@@ -1,4 +1,4 @@
 package com.example.ApiiCollabdev.Repository;
 
-public interface AdmonRepository {
+public interface AdminRepository {
 }
