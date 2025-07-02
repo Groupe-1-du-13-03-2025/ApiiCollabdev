@@ -4,6 +4,7 @@ import com.example.ApiiCollabdev.Service.GestionnaireService;
 import com.example.ApiiCollabdev.Service.auth.AuthenticationStrategy;
 import com.example.ApiiCollabdev.entities.enums.Genre;
 import com.example.ApiiCollabdev.entities.enums.Role;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -48,6 +49,7 @@ public class Gestionnaire extends Utilisateur {
     }
 
     @OneToMany(mappedBy = "gestionnaire", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Projet> projets = new ArrayList<>();
 }
 
