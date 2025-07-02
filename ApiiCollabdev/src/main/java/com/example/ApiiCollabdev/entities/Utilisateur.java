@@ -13,11 +13,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-
+@Entity
 public abstract class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String prenom;
     private String nom;
     private String email;
@@ -25,4 +25,6 @@ public abstract class Utilisateur {
     private Genre genre;
     private Role role;
 
+    public Utilisateur() {
+    }
 }
