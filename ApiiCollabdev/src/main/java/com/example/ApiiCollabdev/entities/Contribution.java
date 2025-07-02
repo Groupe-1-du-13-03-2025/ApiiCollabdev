@@ -1,6 +1,7 @@
 package com.example.ApiiCollabdev.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
@@ -8,11 +9,13 @@ import java.util.Date;
 
 @Entity
 public class Contribution {
+    @Id
     private int id;
     private String titre;
     private String description;
     private Date debutDate;
     private Date finDate;
+    private int piecesAGagner;
     private boolean estFini;
     private boolean estValide;
     /*
@@ -25,6 +28,30 @@ public class Contribution {
     @ManyToOne
     @JoinColumn(name = "projet_id")
     private Projet projet;
+
+    public int getPiecesAGagner() {
+        return piecesAGagner;
+    }
+
+    public void setPiecesAGagner(int piecesAGagner) {
+        this.piecesAGagner = piecesAGagner;
+    }
+
+    public Contributeur getContributeur() {
+        return contributeur;
+    }
+
+    public void setContributeur(Contributeur contributeur) {
+        this.contributeur = contributeur;
+    }
+
+    public Projet getProjet() {
+        return projet;
+    }
+
+    public void setProjet(Projet projet) {
+        this.projet = projet;
+    }
 
     public Contribution() {
     }
