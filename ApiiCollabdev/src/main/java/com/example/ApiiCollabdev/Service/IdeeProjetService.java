@@ -42,4 +42,11 @@ public class IdeeProjetService implements  InterfaceIdeeProduit{
     public IdeeProjet rechercherParIdEtTitre(int id, String titre) {
         return ideeProjetRepository.findByIdAndTitre(id,titre);
     }
+
+    @Override
+    public IdeeProjet rechercherParId(int id) {
+        return ideeProjetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Projet avec ID " + id + " non trouvé."));
+    }
+
 }

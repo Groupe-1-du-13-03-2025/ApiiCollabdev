@@ -12,5 +12,6 @@ public interface InterfaceIdeeProduit {
     public String supprimerIdeeProjet(int id);
     public  IdeeProjet rechercherParTitre(String titre);
     public IdeeProjet rechercherParIdEtTitre(int id,String titre);
+    public  IdeeProjet rechercherParId(int id);
 
 }

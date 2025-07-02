@@ -32,6 +32,10 @@ public class IdeeProjetController {
         return interfaceIdeeProduit.supprimerIdeeProjet(id);
     }
 
+    @GetMapping("rechercher/{id}")
+    public IdeeProjet rechercherParId(@PathVariable int id) {
+        return interfaceIdeeProduit.rechercherParId(id);
+    }
     @GetMapping("/recherche-Titre")
             public IdeeProjet rechercherParTitre(@RequestParam String titre){
         return interfaceIdeeProduit.rechercherParTitre(titre);
