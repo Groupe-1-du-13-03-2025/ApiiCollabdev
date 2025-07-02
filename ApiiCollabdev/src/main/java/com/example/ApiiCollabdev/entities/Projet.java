@@ -16,13 +16,13 @@ public class Projet {
     private int id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String titre;
-    private  String description;
+    private String description;
     private Boolean estFini;
     private Date dateDebut;
     private Date dateFin;
     private Niveau niveauDacces;
 
-@ManyToOne
-@JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
-private Utilisateur Gestionnaire;
+    @ManyToOne
+    @JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
+    private Gestionnaire gestionnaire;
 }
