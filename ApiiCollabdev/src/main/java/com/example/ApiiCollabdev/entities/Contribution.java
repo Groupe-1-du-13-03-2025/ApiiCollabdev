@@ -1,6 +1,7 @@
 package com.example.ApiiCollabdev.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
@@ -8,6 +9,7 @@ import java.util.Date;
 
 @Entity
 public class Contribution {
+    @Id
     private int id;
     private String titre;
     private String description;

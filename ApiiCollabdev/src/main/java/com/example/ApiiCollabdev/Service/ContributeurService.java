@@ -4,6 +4,7 @@ import com.example.ApiiCollabdev.Repository.ContributeurRepository;
 import com.example.ApiiCollabdev.Repository.ContributionRepository;
 import com.example.ApiiCollabdev.entities.Contributeur;
 import com.example.ApiiCollabdev.entities.Contribution;
+import com.example.ApiiCollabdev.entities.Projet;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;

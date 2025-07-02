@@ -5,6 +5,7 @@ import com.example.ApiiCollabdev.Service.ContributeurService;
 import com.example.ApiiCollabdev.Service.ContributionService;
 import com.example.ApiiCollabdev.entities.Contributeur;
 import com.example.ApiiCollabdev.entities.Contribution;
+import com.example.ApiiCollabdev.entities.Projet;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

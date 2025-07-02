@@ -13,11 +13,10 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
 
-public abstract class Utilisateur implements AuthenticationStrategy {
+public abstract class Utilisateur  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -35,5 +34,8 @@ public abstract class Utilisateur implements AuthenticationStrategy {
     private Role role;
 
     public Utilisateur() {
+    }
+
+    public Utilisateur(int id, String prenom, String nom, String email, String hashpw, Genre genre, Role role) {
     }
 }

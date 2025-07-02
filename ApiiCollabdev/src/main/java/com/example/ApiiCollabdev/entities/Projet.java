@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,7 +24,8 @@ public class Projet {
     private Date dateFin;
     private Niveau niveauDacces;
 
-    @ManyToOne
-    @JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
-    private Gestionnaire gestionnaire;
+    /* A effacer après test */
+    @ManyToMany
+    // clé étrangère vers projet
+    private List<Contributeur> contributeurList;
 }
