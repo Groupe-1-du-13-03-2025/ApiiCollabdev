@@ -1,6 +1,5 @@
-package com.example.ApiiCollabdev.entities.enums;
+package com.example.ApiiCollabdev.entities;
 
-import com.example.ApiiCollabdev.entities.CommentaireIdeeProjet;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
