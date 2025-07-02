@@ -28,6 +28,6 @@ public class IdeeProjet {
     @Column(nullable = false)
     private Date datePublication;
 
-     @OneToMany(mappedBy = "ideeProjet")
-     private List<CommentaireIdeeProjet> commentaires;
+//     @OneToMany(mappedBy = "ideeProjet")
+//     private List<CommentaireIdeeProjet> commentaires;
 }

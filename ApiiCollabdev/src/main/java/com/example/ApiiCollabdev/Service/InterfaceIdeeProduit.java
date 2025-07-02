@@ -13,5 +13,6 @@ public interface InterfaceIdeeProduit {
     public  IdeeProjet rechercherParTitre(String titre);
     public IdeeProjet rechercherParIdEtTitre(int id,String titre);
     public  IdeeProjet rechercherParId(int id);
+    public IdeeProjet soutenirIdeeProjet(int id);
 
 }

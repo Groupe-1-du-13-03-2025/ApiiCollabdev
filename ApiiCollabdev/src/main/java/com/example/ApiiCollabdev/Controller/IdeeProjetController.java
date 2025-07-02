@@ -4,6 +4,7 @@ import com.example.ApiiCollabdev.Service.IdeeProjetService;
 import com.example.ApiiCollabdev.Service.InterfaceIdeeProduit;
 import com.example.ApiiCollabdev.entities.IdeeProjet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,17 +33,22 @@ public class IdeeProjetController {
         return interfaceIdeeProduit.supprimerIdeeProjet(id);
     }
 
-    @GetMapping("rechercher/{id}")
-    public IdeeProjet rechercherParId(@PathVariable int id) {
+    @GetMapping("rechercher-Id")
+    public IdeeProjet rechercherParId(@RequestParam int id) {
         return interfaceIdeeProduit.rechercherParId(id);
     }
     @GetMapping("/recherche-Titre")
             public IdeeProjet rechercherParTitre(@RequestParam String titre){
         return interfaceIdeeProduit.rechercherParTitre(titre);
     }
-    @GetMapping("/rerchercher-Id-Titre")
+    @GetMapping("/rechercher-Id-Titre")
     public IdeeProjet rechercherParIdAndTitre(@RequestParam int id,String titre){
         return interfaceIdeeProduit.rechercherParIdEtTitre(id, titre);
+    }
+
+    @PutMapping("/soutenir/{id}")
+   public  IdeeProjet soutenir(@PathVariable int id){
+        return interfaceIdeeProduit.soutenirIdeeProjet(id);
     }
 
 
