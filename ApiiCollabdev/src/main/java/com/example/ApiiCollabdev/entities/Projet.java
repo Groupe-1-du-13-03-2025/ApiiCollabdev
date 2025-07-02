@@ -24,6 +24,7 @@ public class Projet {
     private Niveau niveauDacces;
 
     @ManyToOne
-    @JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
+    @JoinColumn(name = "gestionnaire_id")
     private Gestionnaire gestionnaire;
+
 }
