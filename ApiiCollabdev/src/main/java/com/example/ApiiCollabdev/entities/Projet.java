@@ -6,23 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class Projet {
     @Id
-    private int id;
+    private long id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String titre;
     private  String description;
     private Boolean estFini;
-    private Date dateDebut;
-    private Date dateFin;
+    private LocalDateTime dateDebut;
+    private LocalDateTime dateFin;
     private Niveau niveauDacces;
 
-@ManyToOne
-@JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
-private Utilisateur Gestionnaire;
+    @ManyToOne
+    @JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
+    private Utilisateur gestionnaire;
 }

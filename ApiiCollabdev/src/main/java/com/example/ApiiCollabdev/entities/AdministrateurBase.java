@@ -18,7 +18,7 @@ import lombok.Setter;
 public abstract class AdministrateurBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String email;
     private String motDePasse;
 }

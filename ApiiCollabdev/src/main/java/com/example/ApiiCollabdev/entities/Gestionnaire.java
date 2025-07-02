@@ -15,7 +15,7 @@ import lombok.*;
 public class Gestionnaire extends Utilisateur {
     private String uriCv;
     @Builder
-    public Gestionnaire(int id, String prenom, String nom, String email, String motDePasse, Genre genre, Role role, String uriCv) {
+    public Gestionnaire(long id, String prenom, String nom, String email, String motDePasse, Genre genre, Role role, String uriCv) {
         super(id, prenom, nom, email, motDePasse, genre, role);
         this.uriCv = uriCv;
 
