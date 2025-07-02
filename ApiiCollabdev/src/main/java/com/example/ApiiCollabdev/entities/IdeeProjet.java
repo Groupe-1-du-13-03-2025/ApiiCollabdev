@@ -1,5 +1,6 @@
 package com.example.ApiiCollabdev.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class IdeeProjet {
     private String uriCDC;
     private long nombreSoutien;
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date datePublication;
 
 //     @OneToMany(mappedBy = "ideeProjet")

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class IdeeProjetService implements  InterfaceIdeeProduit{
@@ -29,7 +30,24 @@ public class IdeeProjetService implements  InterfaceIdeeProduit{
 
     @Override
     public String modifierIdeeProjet(IdeeProjet ideeProjet) {
-        return "";
+        // 1. Vérifie si le projet existe
+        Optional<IdeeProjet> ideeExistante = ideeProjetRepository.findById(ideeProjet.getId());
+
+        if (ideeExistante.isPresent()) {
+            // 2. Met à jour les champs nécessaires
+            IdeeProjet projetAModifier = ideeExistante.get();
+            projetAModifier.setTitre(ideeProjet.getTitre());
+            projetAModifier.setDescription(ideeProjet.getDescription());
+            projetAModifier.setDomaine(ideeProjet.getDomaine());
+            // Ajoute les autres champs à mettre à jour si besoin
+
+            // 3. Sauvegarde la modification
+            ideeProjetRepository.save(projetAModifier);
+
+            return "Projet modifié avec succès";
+        } else {
+            return "Projet introuvable";
+        }
     }
 
     @Override
