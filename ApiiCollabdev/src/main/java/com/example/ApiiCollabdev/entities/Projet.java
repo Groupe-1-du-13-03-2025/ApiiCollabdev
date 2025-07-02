@@ -11,10 +11,11 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 public class Projet {
     @Id
-    private int id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String titre;
     private  String description;
     private Boolean estFini;
@@ -22,7 +23,7 @@ public class Projet {
     private Date dateFin;
     private Niveau niveauDacces;
 
-@ManyToOne
-@JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
-private Utilisateur Gestionnaire;
+    @ManyToOne
+    @JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
+    private Gestionnaire gestionnaire;
 }
