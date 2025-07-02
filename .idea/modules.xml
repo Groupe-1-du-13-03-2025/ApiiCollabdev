@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ApiiCollabdev/ApiiCollabdev.iml" filepath="$PROJECT_DIR$/ApiiCollabdev/ApiiCollabdev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ApiiCollabdev.iml" filepath="$PROJECT_DIR$/.idea/ApiiCollabdev.iml" />
     </modules>
   </component>
 </project>

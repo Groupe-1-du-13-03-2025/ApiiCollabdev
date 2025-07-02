@@ -18,9 +18,9 @@ public class CommentaireIdeeProjet {
     private String contenu;
     private LocalDateTime dateCommentaire;
 
-//    @ManyToOne
-//    @JoinColumn(name ="idUtilisateur")
-//    private Utilisateur utilisateur;
+    @ManyToOne
+    @JoinColumn(name ="idUtilisateur")
+    private Utilisateur utilisateur;
 
     @ManyToOne
     @JoinColumn(name="idIdeeProjet")
