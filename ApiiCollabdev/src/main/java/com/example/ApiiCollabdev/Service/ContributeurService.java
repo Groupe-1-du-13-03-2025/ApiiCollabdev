@@ -5,13 +5,14 @@ import com.example.ApiiCollabdev.Repository.ContributionRepository;
 import com.example.ApiiCollabdev.entities.Contributeur;
 import com.example.ApiiCollabdev.entities.Contribution;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 
 @Service
 public class ContributeurService {
+
     //injection de dépendance
     ContributeurRepository contributeurRepository;
     ContributionRepository contributionRepository;
@@ -107,6 +108,4 @@ public class ContributeurService {
     public void modifierContributeur(Contributeur contributeur){
         contributeurRepository.save(contributeur);
     }
-
-
 }
