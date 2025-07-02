@@ -11,10 +11,11 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 public class Projet {
     @Id
-    private int id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String titre;
     private String description;
     private Boolean estFini;

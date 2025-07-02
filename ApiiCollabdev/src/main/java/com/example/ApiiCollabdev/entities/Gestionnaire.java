@@ -12,8 +12,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
-
 import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -43,6 +44,9 @@ public class Gestionnaire extends Utilisateur {
             return BCrypt.checkpw(password, gestionnaire.getMotDePasse());
         }
     }
+
+    @OneToMany(mappedBy = "gestionnaire", cascade = CascadeType.ALL)
+    private List<Projet> projets = new ArrayList<>();
 }
 
 

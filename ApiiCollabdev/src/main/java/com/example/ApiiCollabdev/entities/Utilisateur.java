@@ -16,6 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
+public abstract class Utilisateur {
 
 public abstract class Utilisateur implements AuthenticationStrategy {
     @Id
