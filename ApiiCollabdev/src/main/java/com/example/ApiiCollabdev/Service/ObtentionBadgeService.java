@@ -22,7 +22,7 @@ public class ObtentionBadgeService {
     public List<ObtentionBadge> getByContributeur( Long id){
         return obtentionBadgeRepository.findByContributeurId(id);
     }
-    public List<ObtentionBadge> getByBadge(Long id){
+    public ObtentionBadge getByBadge(Long id){
         return obtentionBadgeRepository.findByBadgeId(id);
     }
 }

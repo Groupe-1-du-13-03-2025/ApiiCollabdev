@@ -20,7 +20,7 @@ public class BadgeController {
     }
     // Afficher un badge par id
    @GetMapping("/{id}")
-    public Badge getBadgeById(@PathVariable Long id){
+    public Badge getBadgeById(@PathVariable Integer id){
         return badgeService.lireBadgeParId(id);
    }
    // Ajouter un badge
@@ -29,7 +29,7 @@ public class BadgeController {
         return badgeService.creerBadge(badge);
    }
    @DeleteMapping
-    public void deleteBadge(@PathVariable Long id){
+    public void deleteBadge(@PathVariable Integer id){
         badgeService.supprimerBadge(id);
    }
 }

@@ -15,13 +15,13 @@ public class BadgeService {
     public Badge creerBadge(Badge badge){
         return  badgeRepository.save(badge);
     }
-    public void supprimerBadge(Long id){
+    public void supprimerBadge(Integer id){
         badgeRepository.deleteById(id);
     }
    public List<Badge> lireTousLesBadges(){
         return badgeRepository.findAll();
    }
-   public Badge lireBadgeParId(Long id){
+   public Badge lireBadgeParId(Integer id){
         return badgeRepository.findById(id).orElse(null);
    }
 }
