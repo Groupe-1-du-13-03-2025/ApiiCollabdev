@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -14,13 +14,13 @@ import java.util.Date;
 public class CommentaireIdeeProjet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String contenu;
-    private Date dateCommentaire;
+    private LocalDateTime dateCommentaire;
 
-//    @ManyToOne
-//    @JoinColumn(name ="idUtilisateur")
-//    private Utilisateur utilisateur;
+    @ManyToOne
+    @JoinColumn(name ="idUtilisateur")
+    private Utilisateur utilisateur;
 
     @ManyToOne
     @JoinColumn(name="idIdeeProjet")

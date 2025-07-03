@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -16,7 +16,7 @@ import java.util.List;
 public class IdeeProjet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @Column(nullable = false)
     private String titre;
     @Column(nullable = false, columnDefinition = "TEXT")
@@ -26,7 +26,7 @@ public class IdeeProjet {
     private String uriCDC;
     private long nombreSoutien;
     @Column(nullable = false)
-    private Date datePublication;
+    private LocalDateTime datePublication;
 
      @OneToMany(mappedBy = "ideeProjet")
      private List<CommentaireIdeeProjet> commentaires;

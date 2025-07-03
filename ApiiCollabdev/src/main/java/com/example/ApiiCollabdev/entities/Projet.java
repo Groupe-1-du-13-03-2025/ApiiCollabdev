@@ -7,21 +7,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
 public class Projet {
     @Id
+    private long id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     private String titre;
-    private String description;
+    private  String description;
     private Boolean estFini;
-    private Date dateDebut;
-    private Date dateFin;
+    private LocalDateTime dateDebut;
+    private LocalDateTime dateFin;
     private Niveau niveauDacces;
 
     @ManyToOne
