@@ -5,6 +5,7 @@ import com.example.ApiiCollabdev.Repository.ContributionRepository;
 import com.example.ApiiCollabdev.entities.Contributeur;
 import com.example.ApiiCollabdev.entities.Contribution;
 import com.example.ApiiCollabdev.entities.Projet;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +97,7 @@ public class ContributeurService {
     }
 
     //quitter un projet
+    @Transactional
     public void quitterProjet(int idContributeur, int idProjet){
         contributionRepository.deleteAllByContributeur_IdAndProjet_Id(idContributeur, idProjet);
     }
