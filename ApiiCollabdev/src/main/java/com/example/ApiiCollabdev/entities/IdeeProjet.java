@@ -30,6 +30,6 @@ public class IdeeProjet {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date datePublication;
 
-//     @OneToMany(mappedBy = "ideeProjet")
-//     private List<CommentaireIdeeProjet> commentaires;
+     @OneToMany(mappedBy = "ideeProjet")
+     private List<CommentaireIdeeProjet> commentaires;
 }
