@@ -26,10 +26,14 @@ public class ProjetService {
     }
 
     //Lister les projet d'un gestionnaire
-    public List<Projet> listerLesProjet(int gestionnaireId){
-        Gestionnaire gestionnaire = gestionnaireRepository.findById(gestionnaireId)
-                .orElseThrow(() -> new RuntimeException("Gestionnaire introuvable"));
-        return gestionnaire.getProjets();
+    public List<Projet> listerLesProjetParGestionnaireId(int gestionnaireId){
+        // Vérifie que le gestionnaire existe
+        if (!gestionnaireRepository.existsById(gestionnaireId)) {
+            throw new RuntimeException("Gestionnaire introuvable avec l'id : " + gestionnaireId);
+        }
+
+        // Récupère les projets liés au gestionnaire
+        return projetRepository.findByGestionnaireId(gestionnaireId);
     }
 
     //trouver un projet par nom et par idGestionnaire

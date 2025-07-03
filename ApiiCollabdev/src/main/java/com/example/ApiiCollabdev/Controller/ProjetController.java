@@ -6,8 +6,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/projets")
 @RequiredArgsConstructor
 public class ProjetController {
 
@@ -23,4 +25,10 @@ public class ProjetController {
     public Projet ajouterunProjet( @RequestParam int id, @RequestBody Projet projet){
        return projetService.creerProjet(id, projet);
     }
+
+    @GetMapping
+    public List<Projet> afficherLesProjet(@RequestParam int id){
+        return projetService.listerLesProjetParGestionnaireId(id);
+    }
+
 }
