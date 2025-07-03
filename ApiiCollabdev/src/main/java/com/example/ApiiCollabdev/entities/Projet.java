@@ -1,6 +1,7 @@
 package com.example.ApiiCollabdev.entities;
 
 import com.example.ApiiCollabdev.entities.enums.Niveau;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public class Projet {
     private Niveau niveauDacces;
 
     @ManyToOne
-    @JoinColumn(name = "idGestionnaire")       // clé étrangère vers projet
-    private Utilisateur gestionnaire;
+    @JsonBackReference
+    @JoinColumn(name = "gestionnaire_id")
+    private Gestionnaire gestionnaire;
+
 }

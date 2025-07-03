@@ -5,6 +5,7 @@ import com.example.ApiiCollabdev.entities.enums.Genre;
 import com.example.ApiiCollabdev.entities.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
+
 @Getter
 @Setter
 @NoArgsConstructor
