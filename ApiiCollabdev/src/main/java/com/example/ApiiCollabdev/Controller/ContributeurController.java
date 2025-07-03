@@ -55,12 +55,7 @@ public class ContributeurController {
         return contributeurService.afficherContributionParProjet(idContributeur, idProjet);
     }
 
-    //afficher liste des contributeurs d'un projet
-    @GetMapping("/projet/{id}")
-    public List<Contributeur> afficherProjetContributeurs(@PathVariable int idProjet)
-    {
-        return contributeurService.afficherProjetContributeurs(idProjet);
-    }
+
 
     //afficher contributions validées d'un contributeur
     @GetMapping("/{idContributeur}/contributions/valide")
@@ -88,9 +83,10 @@ public class ContributeurController {
         contributeurService.supprimerContributeur(idContributeur);
     }
 
-    @PutMapping
-    public void modifierContributeur(@RequestBody  Contributeur contributeur)
+    @PutMapping("/{idContributeur}")
+    public void modifierContributeur(@PathVariable int idContributeur, @RequestBody  Contributeur contributeur)
     {
+        contributeur.setId(idContributeur);
         contributeurService.modifierContributeur(contributeur);
     }
 
