@@ -54,4 +54,7 @@ public class Badge {
     public void setObtention(List<ObtentionBadge> obtention) {
         this.obtention = obtention;
     }
+
+    public Badge() {
+    }
 }

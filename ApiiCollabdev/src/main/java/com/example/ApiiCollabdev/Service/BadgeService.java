@@ -11,6 +11,9 @@ import java.util.List;
 public class BadgeService {
     @Autowired
     public BadgeRepository badgeRepository;
+    public List<Badge> getAllBadges (){
+        return badgeRepository.findAll();
+    }
 
     public Badge creerBadge(Badge badge){
         return  badgeRepository.save(badge);

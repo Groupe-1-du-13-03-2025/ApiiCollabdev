@@ -19,6 +19,9 @@ public class ObtentionBadge {
 
     //constructeur
 
+    public ObtentionBadge() {
+    }
+
     public ObtentionBadge(Long id, Badge badge, Contributeur contributeur, Date dateObtention) {
         this.id = id;
         this.badge = badge;
